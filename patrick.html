@@ -1,186 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Patrick John Lane — Father's Day MVP</title>
-  <style>
-    :root {
-      --dark:   #111a14;
-      --green:  #1e3a28;
-      --gold:   #c9a45a;
-      --mist:   #e8ede9;
-      --faded:  rgba(232, 237, 233, 0.72);
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      background: var(--dark);
-      font-family: Georgia, serif;
-      color: var(--mist);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-    }
-
-    .card {
-      max-width: 600px;
-      width: 100%;
-      text-align: center;
-      animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    /* Trophy badge */
-    .badge {
-      display: inline-block;
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--dark);
-      background: var(--gold);
-      padding: 0.35rem 1rem;
-      border-radius: 2px;
-      margin-bottom: 2rem;
-    }
-
-    /* Photo */
-    .photo-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2.5rem;
-    }
-
-    .photo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border: 2px solid var(--gold);
-      border-radius: 4px;
-      opacity: 0.45;
-    }
-
-    .photo-wrap img {
-      width: 300px;
-      height: 370px;
-      object-fit: cover;
-      object-position: center 20%;
-      border-radius: 3px;
-      display: block;
-      filter: contrast(1.04) saturate(0.92);
-    }
-
-    /* Eyebrow */
-    .eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.9rem;
-    }
-
-    /* Headline */
-    h1 {
-      font-size: clamp(1.9rem, 7vw, 2.9rem);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.2;
-      color: var(--mist);
-      margin-bottom: 2rem;
-    }
-
-    /* Divider */
-    .divider {
-      width: 36px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto 2rem;
-      opacity: 0.55;
-    }
-
-    /* Body */
-    p {
-      font-size: 1.04rem;
-      line-height: 1.9;
-      color: var(--faded);
-      margin-bottom: 1.4rem;
-    }
-    p:last-of-type { margin-bottom: 0; }
-
-    /* Caption under photo */
-    .caption {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: rgba(232,237,233,0.35);
-      margin-top: -1.5rem;
-      margin-bottom: 2.5rem;
-      font-style: italic;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-    }
-
-    /* Sign-off */
-    .signoff {
-      margin-top: 2.5rem;
-      font-size: 0.78rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.7;
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+<title>Father's Day MVP: Patrick John Lane — Patrick DeLuca's Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="card">
 
-    <div class="badge">Father's Day Baseball Weekend MVP</div>
+<div class="main-table">
 
+  <a class="back-link" href="index.html">&#8592; Back to Patrick DeLuca's Home Page</a>
+
+  <hr class="rainbow">
+
+  <h1>&#127942; Father's Day MVP &#127942;</h1>
+  <p class="pink"><em>Patrick John Lane</em></p>
+
+  <hr class="rainbow">
+
+  <div class="section-box">
     <div class="photo-wrap">
       <img src="patrick.jpg" alt="Patrick and his son at the game">
     </div>
-
-    <p class="caption">That look on his son's face says everything.</p>
-
-    <p class="eyebrow">Patrick John Lane</p>
-
-    <h1>The kind of man<br>who lifts everyone up</h1>
-
-    <div class="divider"></div>
-
-    <p>
-      Some people show up. Patrick shows up for everyone — and then
-      goes further than anyone asked, further than most people would
-      even think to go. That's just who he is.
+    <p style="color:#aaaaaa; font-size:0.8em; font-style:italic;">
+      Patrick &amp; his son at Yankee Stadium &#9918;
     </p>
+  </div>
 
+  <hr class="rainbow">
+
+  <div class="section-box">
+    <h2>&#9733; The MVP Award Goes To... &#9733;</h2>
+    <p>
+      Some people show up. Patrick shows up for
+      <strong style="color:#ffff00;">everyone</strong> — and then
+      goes further than anyone asked, further than most people
+      would even think to go. That's just who he is.
+    </p>
+  </div>
+
+  <div class="section-box">
+    <h2>&#128150; What He Did This Weekend</h2>
     <p>
       This Father's Day weekend, he didn't just bring the energy.
-      He made sure everyone had a moment. He looked after his father-in-law
-      the way a son would — maybe better. That kind of generosity
-      doesn't go unnoticed, even when he's too busy giving to notice
-      that people are watching.
+      He made sure everyone had a moment. He looked after his
+      father-in-law the way a son would — maybe better.
+      That kind of generosity doesn't go unnoticed, even when
+      he's too busy giving to notice that people are watching.
     </p>
-
-    <p>
-      And then there's that photo. His son's face is the whole story.
-      That's what it looks like when a kid grows up knowing his dad
-      always shows up. That smile doesn't lie.
-    </p>
-
-    <p>
-      Patrick John Lane — Father's Day MVP, and honestly,
-      MVP of a lot more than just the weekend.
-    </p>
-
-    <p class="signoff">With respect and gratitude</p>
-
   </div>
+
+  <div class="section-box">
+    <h2>&#128100; That Look on His Son's Face</h2>
+    <p>
+      Says everything. That's what it looks like when a kid
+      grows up knowing his dad always shows up.
+      That smile doesn't lie.
+    </p>
+  </div>
+
+  <div class="section-box">
+    <h2 style="color:#ff0000;">
+      &#9733; Patrick John Lane &#9733;<br>
+      Father's Day MVP!!
+    </h2>
+    <p class="pink">And honestly, MVP of a lot more than just the weekend!!</p>
+  </div>
+
+  <hr class="rainbow">
+
+  <a class="back-link" href="index.html">&#8592; Back to Patrick DeLuca's Home Page</a>
+
+  <div class="small-print">
+    <p>&#169; Patrick DeLuca 2025</p>
+    <p>Best viewed in Netscape Navigator 4.0 at 800&times;600</p>
+  </div>
+
+</div>
+
 </body>
 </html>

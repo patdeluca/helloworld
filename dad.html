@@ -1,156 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Dad</title>
-  <style>
-    :root {
-      --navy:  #1a2744;
-      --grey:  #8a9bb0;
-      --white: #f5f7fa;
-      --gold:  #c4a35a;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      min-height: 100vh;
-      background: var(--navy);
-      font-family: Georgia, serif;
-      color: var(--white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 1.5rem;
-    }
-
-    .card {
-      max-width: 560px;
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Photo */
-    .photo-wrap {
-      position: relative;
-      display: inline-block;
-      margin-bottom: 2.5rem;
-    }
-
-    .photo-wrap::before {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border: 2px solid var(--gold);
-      border-radius: 4px;
-      opacity: 0.5;
-    }
-
-    .photo-wrap img {
-      width: 280px;
-      height: 350px;
-      object-fit: cover;
-      object-position: center top;
-      border-radius: 3px;
-      display: block;
-      filter: contrast(1.05) saturate(0.9);
-    }
-
-    /* Eyebrow */
-    .eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    /* Headline */
-    h1 {
-      font-size: clamp(2rem, 8vw, 3rem);
-      font-weight: 400;
-      font-style: italic;
-      line-height: 1.15;
-      margin-bottom: 2rem;
-      color: var(--white);
-    }
-
-    /* Divider */
-    .divider {
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto 2rem;
-      opacity: 0.6;
-    }
-
-    /* Body copy */
-    p {
-      font-size: 1.05rem;
-      line-height: 1.85;
-      color: rgba(245, 247, 250, 0.82);
-      margin-bottom: 1.4rem;
-    }
-
-    p:last-of-type { margin-bottom: 0; }
-
-    /* Sign-off */
-    .signoff {
-      margin-top: 2.5rem;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.75;
-    }
-
-    /* Subtle animation */
-    .card { animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) both; }
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+<title>A Note for Dad — Patrick DeLuca's Home Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="card">
 
+<div class="main-table">
+
+  <a class="back-link" href="index.html">&#8592; Back to Patrick DeLuca's Home Page</a>
+
+  <hr class="rainbow">
+
+  <h1>&#10084; A Note for Dad &#10084;</h1>
+  <p class="pink"><em>For the man in the Yankees hat</em></p>
+
+  <hr class="rainbow">
+
+  <div class="section-box">
     <div class="photo-wrap">
       <img src="dad.jpg" alt="Dad at the game">
     </div>
-
-    <p class="eyebrow">A few words</p>
-
-    <h1>For the man in<br>the Yankees hat</h1>
-
-    <div class="divider"></div>
-
-    <p>
-      There you are — game day, pinstripes on, not a care in the world.
-      This is you in your natural habitat, and it pretty much captures
-      everything I love about you in one shot.
+    <p style="color:#aaaaaa; font-size:0.8em; font-style:italic;">
+      Dad at Yankee Stadium &#9918;
     </p>
+  </div>
 
+  <hr class="rainbow">
+
+  <div class="section-box">
+    <h2>&#9733; About My Dad &#9733;</h2>
     <p>
-      You don't need a lot of noise. You just show up, fully present,
-      genuinely happy — and somehow that's always been enough to make
-      everyone around you feel exactly the same way.
+      There he is — Yankees gear on, game in front of him,
+      not a single problem in the world. This is him in his
+      natural habitat, and it pretty much captures everything
+      I love about him in one shot.
     </p>
+  </div>
 
+  <div class="section-box">
+    <h2>&#128150; What Makes Him Great</h2>
     <p>
-      Thanks for being the kind of dad who taught me that the best moments
-      in life are the simple ones. A good seat, a good game, good company.
+      He doesn't need a lot of noise. He just shows up,
+      fully present, genuinely happy — and somehow that's
+      always been enough to make everyone around him feel
+      exactly the same way.
+    </p>
+    <p>
+      Thanks for being the kind of dad who taught me that
+      the best moments in life are the simple ones.
+      A good seat, a good game, good company.
       You've given me more of those than I can count.
     </p>
-
-    <p>
-      Love you, Dad. Go Yankees.
-    </p>
-
-    <p class="signoff">Always in your corner</p>
-
   </div>
+
+  <div class="section-box">
+    <h2 style="color:#ff0000;">&#9733; Love you, Dad. Go Yankees. &#9733;</h2>
+    <p class="pink">Always in your corner!!</p>
+  </div>
+
+  <hr class="rainbow">
+
+  <a class="back-link" href="index.html">&#8592; Back to Patrick DeLuca's Home Page</a>
+
+  <div class="small-print">
+    <p>&#169; Patrick DeLuca 2025</p>
+    <p>Best viewed in Netscape Navigator 4.0 at 800&times;600</p>
+  </div>
+
+</div>
+
 </body>
 </html>
