@@ -161,6 +161,39 @@ hr.rainbow {
   max-width: 400px;
 }
 
+/* ── Nav bar ── */
+
+.nav-bar {
+  background: #000000;
+  border: 2px outset #ffff00;
+  padding: 7px 10px;
+  margin-bottom: 14px;
+  font-size: 0.85em;
+}
+
+.nav-bar a {
+  color: #ffff00;
+  text-decoration: none;
+  padding: 3px 10px;
+  border: 2px outset #888888;
+  background: #000066;
+  display: inline-block;
+  margin: 2px 3px;
+  font-weight: bold;
+}
+
+.nav-bar a:hover {
+  background: #003399;
+  border-style: inset;
+  color: #ff6600;
+}
+
+.nav-bar a.active {
+  background: #003399;
+  border-style: inset;
+  color: #00ff00;
+}
+
 /* ── Utility ── */
 
 .email-link  { color: #ff69b4; font-weight: bold; }
