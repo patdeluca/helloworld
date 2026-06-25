@@ -3,40 +3,201 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello, World — America's National Parks</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Pat DeLuca</title>
+  <style>
+    :root {
+      --night: #0d1117;
+      --gold:  #c9a45a;
+      --mist:  #f0ede8;
+      --ease:  cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      background: var(--night);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--mist);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4rem 1.5rem 3rem;
+    }
+
+    /* ── Header ── */
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      animation: rise 0.9s var(--ease) both;
+    }
+
+    header p {
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    header h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--mist);
+      line-height: 1.15;
+    }
+
+    .divider {
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.25rem auto 0;
+      opacity: 0.5;
+    }
+
+    /* ── Grid ── */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* ── Card ── */
+
+    .card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      text-decoration: none;
+      display: block;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: rise 0.8s var(--ease) forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.15s; }
+    .card:nth-child(2) { animation-delay: 0.28s; }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      transition: transform 0.65s var(--ease);
+      filter: saturate(0.85) contrast(1.05);
+    }
+
+    .card:hover img { transform: scale(1.05); }
+
+    .card__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.1) 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.75rem;
+      transition: background 0.4s;
+    }
+
+    .card:hover .card__overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.2) 55%);
+    }
+
+    .card__label {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .card__name {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .card__cta {
+      margin-top: 0.85rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.35s, transform 0.35s;
+    }
+    .card__cta::after { content: ' →'; }
+
+    .card:hover .card__cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Footer ── */
+
+    footer {
+      margin-top: 3.5rem;
+      font-size: 0.75rem;
+      color: rgba(240,237,232,0.25);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Animation ── */
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 400px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <section class="hero" id="hero">
-    <div class="hero__slideshow" id="slideshow"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
-      <p class="hero__eyebrow">Welcome to the world</p>
-      <h1 class="hero__title">Hello, <span class="hero__accent">World</span></h1>
-      <p class="hero__subtitle">Explore America's most breathtaking national parks</p>
-      <a href="#parks" class="hero__cta">Discover the Parks</a>
-    </div>
-    <div class="hero__scroll-hint"><span></span></div>
-  </section>
+  <header>
+    <p>Welcome</p>
+    <h1>Pat DeLuca</h1>
+    <div class="divider"></div>
+  </header>
 
-  <section class="parks" id="parks">
-    <header class="parks__header">
-      <h2>America's Crown Jewels</h2>
-      <p>Six iconic landscapes that define the American wilderness</p>
-    </header>
-    <div class="parks__grid" id="parksGrid"></div>
-  </section>
+  <div class="grid">
 
-  <footer class="footer">
-    <p>
-      Photos courtesy of
-      <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>
-      photographers &amp; the
-      <a href="https://www.nps.gov" target="_blank" rel="noopener">National Park Service</a>.
-    </p>
-  </footer>
+    <a class="card" href="dad.html">
+      <img src="dad.jpg" alt="Dad at the game">
+      <div class="card__overlay">
+        <p class="card__label">A note for</p>
+        <h2 class="card__name">Dad</h2>
+        <p class="card__cta">Read more</p>
+      </div>
+    </a>
 
-  <script src="js/main.js"></script>
+    <a class="card" href="patrick.html">
+      <img src="patrick.jpg" alt="Patrick and his son">
+      <div class="card__overlay">
+        <p class="card__label">Father's Day MVP</p>
+        <h2 class="card__name">Patrick John Lane</h2>
+        <p class="card__cta">Read more</p>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>patdeluca.github.io</footer>
+
 </body>
 </html>
