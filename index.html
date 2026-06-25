@@ -3,60 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .container {
-      text-align: center;
-      padding: 2rem;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 6rem);
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-    }
-
-    h1 span {
-      background: linear-gradient(90deg, #e94560, #0f3460, #533483);
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: shine 3s linear infinite;
-    }
-
-    @keyframes shine {
-      to { background-position: 200% center; }
-    }
-
-    p {
-      margin-top: 1.5rem;
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.6);
-    }
-  </style>
+  <title>Hello, World — America's National Parks</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Hello, <span>World</span>!</h1>
-    <p>Welcome to my landing page.</p>
-  </div>
+
+  <section class="hero" id="hero">
+    <div class="hero__slideshow" id="slideshow"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Welcome to the world</p>
+      <h1 class="hero__title">Hello, <span class="hero__accent">World</span></h1>
+      <p class="hero__subtitle">Explore America's most breathtaking national parks</p>
+      <a href="#parks" class="hero__cta">Discover the Parks</a>
+    </div>
+    <div class="hero__scroll-hint"><span></span></div>
+  </section>
+
+  <section class="parks" id="parks">
+    <header class="parks__header">
+      <h2>America's Crown Jewels</h2>
+      <p>Six iconic landscapes that define the American wilderness</p>
+    </header>
+    <div class="parks__grid" id="parksGrid"></div>
+  </section>
+
+  <footer class="footer">
+    <p>
+      Photos courtesy of
+      <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>
+      photographers &amp; the
+      <a href="https://www.nps.gov" target="_blank" rel="noopener">National Park Service</a>.
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
