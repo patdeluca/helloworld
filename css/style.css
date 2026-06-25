@@ -1,9 +1,231 @@
 /* ============================================================
-   Patrick DeLuca's World Wide Web Stylesheet — Est. 2025
-   Best viewed in Netscape Navigator 4.0 at 800x600
+   Patrick DeLuca — Shared Stylesheet
+   Modern mode (default) · Retro mode (body.retro)
    ============================================================ */
 
+/* ── Modern tokens ───────────────────────── */
+
+:root {
+  --bg:      #0f1117;
+  --surface: #161b22;
+  --border:  rgba(255, 255, 255, 0.08);
+  --text:    #f0ede8;
+  --muted:   rgba(240, 237, 232, 0.55);
+  --accent:  #c9a45a;
+  --ease:    cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Modern base ─────────────────────────── */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
 body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+
+a             { color: var(--accent); text-decoration: none; }
+a:hover       { color: #fff; }
+a:visited     { color: var(--accent); }
+
+p { margin: 8px 0; line-height: 1.75; color: var(--muted); }
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(1.9rem, 7vw, 3rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  text-shadow: none;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent);
+  text-shadow: none;
+  margin-bottom: 0.5rem;
+}
+
+h3 { color: var(--text); font-size: 1rem; }
+
+/* ── Modern layout ───────────────────────── */
+
+.main-table {
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 10px;
+  animation: rise 0.7s var(--ease) both;
+}
+
+.section-box {
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+/* ── Modern nav ──────────────────────────── */
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.nav-bar a {
+  color: var(--muted);
+  padding: 0.3rem 0.8rem;
+  border: none;
+  background: none;
+  display: inline-block;
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  border-radius: 20px;
+  font-weight: normal;
+  transition: color 0.2s, background 0.2s;
+}
+
+.nav-bar a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-bar a.active {
+  color: var(--accent);
+  background: rgba(201, 164, 90, 0.12);
+  border: none;
+  border-style: none;
+}
+
+.nav-star { display: none; }
+
+/* ── Mode toggle button ──────────────────── */
+
+.mode-toggle {
+  margin-left: auto;
+  font-family: inherit;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.mode-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Modern divider ──────────────────────── */
+
+hr.rainbow {
+  height: 1px;
+  background: var(--border);
+  margin: 1.25rem auto;
+  max-width: 640px;
+  border: none;
+}
+
+/* ── Modern photo ────────────────────────── */
+
+.photo-wrap {
+  display: inline-block;
+  border: 1px solid var(--border);
+  padding: 0;
+  background: transparent;
+  margin: 0.75rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.photo-wrap img {
+  width: 260px;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+/* ── Modern page cards ───────────────────── */
+
+.page-card {
+  display: inline-block;
+  margin: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  border-radius: 6px;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.page-card:hover {
+  border-color: var(--accent);
+  background: rgba(201, 164, 90, 0.08);
+  color: var(--accent);
+}
+
+/* ── Hide retro-only elements in modern ─── */
+
+.marquee-wrap,
+.under-construction,
+.counter-box,
+.back-link { display: none; }
+
+/* ── Modern utility ──────────────────────── */
+
+.email-link { color: var(--accent); font-weight: normal; }
+.pink       { color: var(--accent); }
+.blink      { animation: none; }
+
+.small-print {
+  font-size: 0.7rem;
+  color: rgba(240, 237, 232, 0.2);
+  margin-top: 1.5rem;
+  font-family: inherit;
+}
+
+/* ── Animation ───────────────────────────── */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ============================================================
+   RETRO MODE — all overrides scoped to body.retro
+   ============================================================ */
+
+body.retro {
   background-color: #000033;
   background-image:
     radial-gradient(white 1px, transparent 1px),
@@ -12,62 +234,155 @@ body {
   background-position: 0 0, 25px 25px;
   color: #ffff00;
   font-family: "Comic Sans MS", "Comic Sans", cursive;
-  text-align: center;
-  margin: 0;
   padding: 10px;
 }
 
-a            { color: #00ffff; }
-a:visited    { color: #ff00ff; }
-a:hover      { color: #ff6600; }
+body.retro a         { color: #00ffff; }
+body.retro a:visited { color: #ff00ff; }
+body.retro a:hover   { color: #ff6600; }
 
-h1 {
+body.retro h1 {
+  font-family: "Comic Sans MS", cursive;
   font-size: 2.2em;
+  font-style: normal;
   color: #ff0000;
   text-shadow: 3px 3px #000000, -1px -1px #ff6600;
   margin-bottom: 4px;
 }
 
-h2 {
-  color: #00ff00;
+body.retro h2 {
+  font-family: "Comic Sans MS", cursive;
   font-size: 1.3em;
+  font-style: normal;
+  color: #00ff00;
   text-shadow: 2px 2px #003300;
+  margin-bottom: 0;
 }
 
-h3 { color: #ff6600; font-size: 1.1em; }
+body.retro h3 { color: #ff6600; font-size: 1.1em; }
 
-p  { margin: 8px 0; line-height: 1.6; }
+body.retro p { color: #ffff00; margin: 8px 0; line-height: 1.6; }
 
-/* ── Layout ── */
-
-.main-table {
-  max-width: 640px;
-  width: 100%;
-  margin: 0 auto;
+/* Retro layout */
+body.retro .main-table {
   border: 3px ridge #ffff00;
   background: rgba(0, 0, 51, 0.85);
   padding: 16px;
+  border-radius: 0;
+  animation: none;
 }
 
-.section-box {
+body.retro .section-box {
   border: 2px dashed #00ff00;
   padding: 12px;
-  margin: 14px 0;
   background: rgba(0, 0, 0, 0.4);
+  border-radius: 0;
 }
 
-/* ── Rainbow divider ── */
+/* Retro nav */
+body.retro .nav-bar {
+  display: block;
+  background: #000000;
+  border: 2px outset #ffff00;
+  border-bottom: 2px outset #ffff00;
+  padding: 7px 10px;
+  margin-bottom: 14px;
+}
 
-hr.rainbow {
+body.retro .nav-bar a {
+  color: #ffff00;
+  padding: 3px 10px;
+  border: 2px outset #888888;
+  background: #000066;
+  display: inline-block;
+  margin: 2px 3px;
+  font-weight: bold;
+  font-size: 0.85em;
+  border-radius: 0;
+  letter-spacing: 0;
+}
+
+body.retro .nav-bar a:hover {
+  background: #003399;
+  border-style: inset;
+  color: #ff6600;
+}
+
+body.retro .nav-bar a.active {
+  background: #003399;
+  border-style: inset;
+  color: #00ff00;
+}
+
+body.retro .nav-star { display: inline; }
+
+/* Retro mode toggle */
+body.retro .mode-toggle {
+  border: 2px outset #ff69b4;
+  background: #330033;
+  color: #ff69b4;
+  border-radius: 0;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 0.8em;
+  margin-left: 6px;
+}
+
+body.retro .mode-toggle:hover {
+  border-style: inset;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+/* Retro divider */
+body.retro hr.rainbow {
   height: 8px;
   background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
   margin: 14px auto;
-  max-width: 640px;
-  border: none;
 }
 
-/* ── Marquee ── */
+/* Retro photo */
+body.retro .photo-wrap {
+  border: 4px ridge #ffff00;
+  padding: 4px;
+  background: #000066;
+  border-radius: 0;
+  overflow: visible;
+}
 
+/* Retro page cards */
+body.retro .page-card {
+  border: 3px outset #ffff00;
+  background: #000066;
+  color: #ffffff;
+  font-family: "Comic Sans MS", cursive;
+  border-radius: 0;
+  margin: 8px;
+  padding: 10px 18px;
+}
+
+body.retro .page-card:hover {
+  background: #003399;
+  border-style: inset;
+  color: #ffff00;
+}
+
+/* Show retro-only elements */
+body.retro .marquee-wrap,
+body.retro .under-construction,
+body.retro .counter-box,
+body.retro .back-link { display: block; }
+
+body.retro .marquee-wrap { display: block; }
+body.retro .counter-box  { display: inline-block; }
+body.retro .back-link    { display: inline-block; color: #00ffff; font-size: 0.9em; margin: 12px 0; }
+
+/* Retro utility */
+body.retro .email-link  { color: #ff69b4; font-weight: bold; }
+body.retro .pink        { color: #ff69b4; }
+body.retro .blink       { animation: blink 1s step-end infinite; }
+body.retro .small-print { color: #888888; font-family: "Comic Sans MS", cursive; margin-top: 18px; }
+
+/* Marquee animation */
 .marquee-wrap {
   overflow: hidden;
   white-space: nowrap;
@@ -86,71 +401,7 @@ hr.rainbow {
   font-weight: bold;
 }
 
-/* ── Photo (used on tribute pages) ── */
-
-.photo-wrap {
-  display: inline-block;
-  border: 4px ridge #ffff00;
-  padding: 4px;
-  background: #000066;
-  margin: 10px 0;
-}
-
-.photo-wrap img {
-  width: 260px;
-  height: 320px;
-  object-fit: cover;
-  object-position: center 15%;
-  display: block;
-}
-
-/* ── Buttons / page cards ── */
-
-.page-card {
-  display: inline-block;
-  margin: 8px;
-  padding: 10px 18px;
-  border: 3px outset #ffff00;
-  background: #000066;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: "Comic Sans MS", cursive;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.page-card:hover {
-  background: #003399;
-  border-style: inset;
-  color: #ffff00;
-}
-
-.back-link {
-  display: inline-block;
-  margin: 12px 0;
-  font-size: 0.9em;
-  color: #00ffff;
-  text-decoration: none;
-}
-
-.back-link:hover { color: #ff6600; }
-
-/* ── Counter ── */
-
-.counter-box {
-  background: #000000;
-  border: 2px inset #888888;
-  display: inline-block;
-  padding: 4px 14px;
-  font-family: "Courier New", monospace;
-  font-size: 1.3em;
-  color: #00ff00;
-  letter-spacing: 0.2em;
-  margin-top: 6px;
-}
-
-/* ── Under construction ── */
-
+/* Under construction */
 .under-construction {
   border: 4px solid #ff0000;
   background: #330000;
@@ -161,50 +412,19 @@ hr.rainbow {
   max-width: 400px;
 }
 
-/* ── Nav bar ── */
-
-.nav-bar {
+/* Counter */
+.counter-box {
   background: #000000;
-  border: 2px outset #ffff00;
-  padding: 7px 10px;
-  margin-bottom: 14px;
-  font-size: 0.85em;
-}
-
-.nav-bar a {
-  color: #ffff00;
-  text-decoration: none;
-  padding: 3px 10px;
-  border: 2px outset #888888;
-  background: #000066;
-  display: inline-block;
-  margin: 2px 3px;
-  font-weight: bold;
-}
-
-.nav-bar a:hover {
-  background: #003399;
-  border-style: inset;
-  color: #ff6600;
-}
-
-.nav-bar a.active {
-  background: #003399;
-  border-style: inset;
+  border: 2px inset #888888;
+  padding: 4px 14px;
+  font-family: "Courier New", monospace;
+  font-size: 1.3em;
   color: #00ff00;
+  letter-spacing: 0.2em;
+  margin-top: 6px;
 }
 
-/* ── Utility ── */
-
-.email-link  { color: #ff69b4; font-weight: bold; }
-.pink        { color: #ff69b4; }
-.small-print { font-size: 0.7em; color: #888888; margin-top: 18px; }
-
-.blink {
-  animation: blink 1s step-end infinite;
-}
-
-/* ── Keyframes ── */
+/* ── Shared keyframes ────────────────────── */
 
 @keyframes scroll {
   from { transform: translateX(100vw); }

@@ -5,17 +5,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
+<script>var s=localStorage.getItem('pdmode');if(s==='retro')document.documentElement.classList.add('retro-pre');</script>
+<style>.retro-pre body{visibility:hidden}</style>
 </head>
 <body>
+<script>if(localStorage.getItem('pdmode')==='retro')document.body.classList.add('retro');</script>
 
 <div class="main-table">
 
   <nav class="nav-bar">
-    &#9733;
+    <span class="nav-star">&#9733;</span>
     <a href="index.html" class="active">&#127968; Home</a>
     <a href="dad.html">&#10084; Dad</a>
     <a href="patrick.html">&#127942; Patrick J. Lane</a>
-    &#9733;
+    <span class="nav-star">&#9733;</span>
+    <button class="mode-toggle" id="modeToggle" onclick="toggleMode()">🕹️ Retro Mode</button>
   </nav>
 
   <h1>&#9733; Patrick DeLuca's Home Page &#9733;</h1>
@@ -44,7 +48,7 @@
   <div class="section-box">
     <h2>&#128100; About Me</h2>
     <p>
-      HI!! My name is <strong style="color:#ffff00;">Patrick DeLuca</strong>
+      HI!! My name is <strong style="color:inherit;">Patrick DeLuca</strong>
       and this is my personal home page!!
       I made this myself using HTML!!
     </p>
@@ -64,12 +68,12 @@
 
   <div class="section-box">
     <h2>&#128196; My Special Pages</h2>
-    <p style="color:#aaaaaa; font-size:0.85em;">Click to visit!!</p>
+    <p style="font-size:0.85em;">Click to visit!!</p>
     <br>
     <a class="page-card" href="dad.html">&#10084; A Note for Dad</a>
     <a class="page-card" href="patrick.html">&#127942; Father's Day MVP</a>
     <br><br>
-    <p style="color:#888; font-size:0.78em;">
+    <p style="font-size:0.78em;">
       More pages coming soon!! <span class="blink">&#9608;</span>
     </p>
   </div>
@@ -81,7 +85,7 @@
     <p>You are visitor number:</p>
     <div class="counter-box">0 0 4 1 7</div>
     <br><br>
-    <p style="color:#aaaaaa; font-size:0.85em;">
+    <p style="font-size:0.85em;">
       &#128204; Sign my guestbook!! (coming soon!!)
     </p>
   </div>
@@ -101,5 +105,6 @@
 
 </div>
 
+<script src="js/theme.js"></script>
 </body>
 </html>
